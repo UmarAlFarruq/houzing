@@ -18,7 +18,7 @@ export const Navbar = () => {
                             navbar.map((value) => {
                                 return (
                                     !value.hidden && (
-                                        <NavLink  style={activeStyle} key={value.id} to={value.path} >
+                                        <NavLink style={activeStyle} key={value.id} to={value.path} >
                                             {value.title}
                                         </NavLink>
                                     )

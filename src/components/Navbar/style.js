@@ -39,8 +39,8 @@ const Container = styled.div`
 Logo.Icon = styled(logo)``;
 Logo.Title = styled('div')`
     margin-left: 11px;
-    font-size: 20px;
-    font-weight: 500px;
+    font-size: 24px;
+    font-weight: 900px;
 `
 
 
