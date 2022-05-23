@@ -6,6 +6,10 @@ body {
   background: #ffffff;
 }
 
+@font-face {
+  font-family: headerFondMontserrat;
+  src: url(./assets/fonts/FiraCode-VariableFont_wght.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +22,13 @@ body {
   --activeColor: #0061df;
 
   --width: 1440px;
-  --headerFond: Montserrat;
+  --headerFond: headerFondMontserrat;
 }
 
+.test{
+  font-family: var(--headerFond);
+  font-size: 26px;
+}
 
 .title {
   font-family: 'Montserrat';

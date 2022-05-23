@@ -1,16 +1,23 @@
-import { Outlet, NavLink } from "react-router-dom";
-import { activeStyle, Container, Logo, NavbarBody, NavbarWrapper, Wrapper } from "./style";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Houzing, activeStyle, Container, Logo, NavbarBody, NavbarWrapper, Wrapper } from "./style";
 import { navbar } from './../../utils/navbar';
+import houzing from '../../assets/images/houzingTitle.png'
+import { Button } from "../Generic/Button";
+import { Footer } from "../Footer";
 
 export const Navbar = () => {
+    const navigate = useNavigate();
+    const onSiginIn = () => {
+        navigate('signin')
+    }
     return (
         <Wrapper>
             <Container className="nocopy" >
                 <NavbarWrapper>
-                    <Logo>
+                    <Logo onClick={() => navigate('/home')} >
                         <Logo.Icon />
                         <Logo.Title>
-                            Houzing
+                            <Houzing src={houzing} />
                         </Logo.Title>
                     </Logo>
                     <NavbarBody>
@@ -27,11 +34,12 @@ export const Navbar = () => {
                         }
                     </NavbarBody>
                     <Logo>
-                        <button style={{ width: '120px' }} >Sign in</button>
+                        <Button onClick={onSiginIn} width={'120px'}>Sign in</Button>
                     </Logo>
                 </NavbarWrapper>
             </Container>
             <Outlet />
+            <Footer />
         </Wrapper>
     );
 }

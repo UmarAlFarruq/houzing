@@ -29,8 +29,14 @@ const NavbarBody = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
+    font-family:var(--headerFond) ;
+`
+const Houzing = styled('img')`
+    width:72.86 ;
+    height: 18.29;
 `
 const Container = styled.div`
+    /* width: 100wh; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,12 +57,12 @@ const activeStyle = ({ isActive }) => {
         margin: '0 32px',
         fontStyle: 'normal',
         fontWeight: 400,
-        fontSize: '18px',
+        fontSize: '16px',
         lineHeight: '24px',
     }
 }
 
 
-export { Container, Wrapper, NavbarBody, Logo, NavbarWrapper, activeStyle };
+export { Houzing, Container, Wrapper, NavbarBody, Logo, NavbarWrapper, activeStyle };
 
 
