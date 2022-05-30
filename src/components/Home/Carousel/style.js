@@ -4,21 +4,17 @@ import { ReactComponent as left } from '../../../assets/icons/left-arrow.svg'
 import { ReactComponent as right } from '../../../assets/icons/right-arrow.svg'
 const Container = styled.div`
     position: relative;
-    max-width: 1920px;
+    max-width: 1440px;
     width: 100%;
     height: fit-content;
-    /* display: flex;
-    justify-content: center; */
 `
 const WrappperCarusel = styled(Carousel)`
     height: fit-content;
-    width: 100%;
 `;
 const Img = styled.img`
     background: balck;
-    max-width: 1920px;
     width: 100%;
-    height: 500px;
+    height: 540px;
     box-sizing: border-box;
 `;
 const Icon = styled.div``

@@ -13,7 +13,9 @@ export const Input = ({
     ml,
     onChange,
     placeholder,
-    defaultValue
+    defaultValue,
+    name,
+    value
 }) => {
     return (
         <Wrapper>
@@ -21,6 +23,8 @@ export const Input = ({
             <Container
                 onClick={onClick}
                 defaultValue={defaultValue}
+                name={name}
+                value={value}
                 onChange={onChange}
                 placeholder={placeholder}
                 width={width}

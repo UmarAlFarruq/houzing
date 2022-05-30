@@ -9,15 +9,18 @@ import { ReactComponent as vektor } from '../../../assets/icons/arrow-top-bottom
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 310px;
+    overflow: hidden;
     width: 100%;
-    min-width: 230px;
-    min-height: 429px;
+    min-width: 300px;
+    max-width: 380px;
+    min-height: 450px;
     border: 1px solid rgba(230, 233, 236, 1);
+    border-radius: 3px;
     :hover{
-        filter:drop-shadow(0 20px 38px rgba(0,0,0,0,06))
+        /* filter:drop-shadow(0 20px 38px rgba(0,0,0,0,06))
         drop-shadow(0 7px 46px rgba(0,0,0,0,06))
-        drop-shadow(0 8px 15px rgba(0,0,0,0,06))
+        drop-shadow(0 8px 15px rgba(0,0,0,0,06)) */
+        box-shadow: 0 0 12px 0 rgba(0,0,0,.3);
     }
 `
 const Image = styled.img`
@@ -31,7 +34,7 @@ const InfoWrapper = styled.div`
     position: relative;
     margin-bottom: 20px;
     padding: 0 20px;
-    /* border-top: 1px solid rgba(230, 233, 236, 1) ; */
+    border-top: 1px solid rgba(230, 233, 236, 1) ;
 `
 const Info = styled.div``;
 Info.Title = styled.h5`
@@ -118,7 +121,26 @@ Price.Button = styled.div`
     align-items: center;
     width: 30%;
 `
+const User = styled.div`
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border: 2px solid white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    top: -21px;
+    right: 23px;
+    box-sizing: border-box;
+    `
+User.Img = styled.img`
+    width: 38px;
+    cursor: pointer;
+    height: 38px;
+    box-sizing: border-box;
+    border-radius: 50%;
+`
 
-export { Price, Icons, Container, Image, InfoWrapper, Info, IconWrapper, PriceWrapper };
+export { Price,User, Icons, Container, Image, InfoWrapper, Info, IconWrapper, PriceWrapper };
 
 
