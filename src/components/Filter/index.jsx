@@ -1,20 +1,33 @@
+import { useState } from 'react';
 import { Container, Icon, Advanced, Section } from "./style";
 import { Button } from "../Generic/Button";
 import { Input } from "../Generic/Input";
-import { Popover } from "antd";
+import { Popover, Select } from "antd";
 import UseReplace from "../../hooks/useReplace";
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
+const { Option } = Select;
+const { REACT_APP_BASE_URL: url } = process.env;
 
 export const Filter = () => {
-    const navigate  = useNavigate();
+    const [select, setSelect] = useState([])
+    const navigate = useNavigate();
 
     const onChange = ({ target }) => {
         const { name, value } = target
         navigate(`${UseReplace(name, value)}`)
-      
-        
     }
+    const onSelect = (e) => {
+        navigate(`${UseReplace('category_id', e)}`)
+    }
+    useQuery(
+        ['getCategorydata'],
+        () => { return fetch(`${url}/v1/categories/list`).then(res => res.json()) },
+        {
+            onSuccess: (res) => setSelect(() => res.data || []),
+        }
+    )
 
     const AdvancedSearch = (
         <Advanced>
@@ -35,6 +48,18 @@ export const Filter = () => {
             <Section>
                 <Input onChange={onChange} name='min_price' placeholder="Min price" />
                 <Input onChange={onChange} name='max_price' placeholder="Max price" />
+                <Select
+                    name='category_id'
+                    onChange={onSelect}
+                    size="large"
+                    placeholder="Category"
+                    style={{ minWidth: 200 }}
+                    defaultValue={2}
+                >
+                    {select.map(value => {
+                        return <Option key={value.id} value={value.id}>{value.name}</Option>
+                    })}
+                </Select>
             </Section>
             <Section>
                 <Button

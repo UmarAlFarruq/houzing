@@ -7,6 +7,7 @@ const Wrapper = styled.div`
     background:var(--primaryColor) ;
     box-sizing: border-box;
     height: fit-content;
+    margin-top: 20px;
     `
 const Container = styled.div`
     display: flex;

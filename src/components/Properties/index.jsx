@@ -10,17 +10,30 @@ export const Properties = () => {
     const { search } = useLocation();
 
     const [data, setData] = useState([]);
-    const { REACT_APP_BASE_URL: url } = process.env
+    // const [title, setTitle] = useState('Properties');
+    const { REACT_APP_BASE_URL: url } = process.env;
     useQuery(
         ['getHomeList', search],
         () => { return fetch(`${url}/v1/houses/list${search || '?'}`).then(res => res.json()) },
         {
             onSuccess: (res) => {
-                // console.log('res:', res?.dataList[0])
-                setData(res?.dataList[0] || [])
-            }
+                setData(res?.data || []);
+            },
+            onError: (err) => console.log(err)
         }
-    )
+    );
+    useQuery(
+        ['getHomeList', search],
+        () => { return fetch(`${url}/v1/categories/list${search || '?'}`).then(res => res.json()) },
+        {
+            onSuccess: (res) => {
+                setData(res?.data || []);
+            },
+            onError: (err) => console.log(err)
+        }
+    );
+    // console.log(data.length);
+
     return (
         <Container>
             <Filter />
@@ -32,11 +45,11 @@ export const Properties = () => {
             </Title>
             <Body.Wrapper>
                 <Body>
-                    {
-                        data.map((value, index) => {
+                    {data.length > 0 ?
+                        data.map((value) => {
                             return <Card key={value.id} info={value} />
-
                         })
+                        : <Title.Title className="nocopy" >No data</Title.Title>
                     }
                 </Body>
             </Body.Wrapper>

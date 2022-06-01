@@ -29,6 +29,7 @@ const Container = styled.button`
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    background: none;
 
     height: ${({ height }) => height || '44px'};
     min-width: ${({ width }) => width || '100%'};

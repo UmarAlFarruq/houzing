@@ -5,14 +5,15 @@ import user from '../../../assets/images/user.jpg'
 
 export const Card = ({ info, mr, mt, }) => {
     return (
-        <Container  mr={mr} mt={mt} className="nocopy" >
-            <Image src={info?.attachments[0]?.imgPath || noimg}  alt='house img' />
+        <Container mr={mr} mt={mt} className="nocopy" >
+            <Image src={info?.attachments[0]?.imgPath || noimg} alt='house img' />
             <InfoWrapper>
                 <User>
                     <User.Img src={info?.user || user} />
                 </User>
                 <Info.Title>
-                    {info?.address || 'New Apartment Nice Wiew'}
+                    {info?.address || 'New Apartment Nice Wiew'} <br />
+                    Cotegory:  {info?.category?.name || 'Category'}
                 </Info.Title>
                 <Info.Text>
                     {info?.description || 'Quincy St, Brooklyn, NY, USA'}
@@ -53,7 +54,7 @@ export const Card = ({ info, mr, mt, }) => {
 // 11.When to use a Class Component over a Function Component (Qachon Function Qachon Class Component ishlatgan maqul)
 // 12.What are Pure Components(Pure Component nima?)
 // 13.controlled vs unconteolled componentlar nima ?
-// 14. What are forword refs.( 23. What are forword refs).  
+// 14. What are forword refs.( 23. What are forword refs).
 // 15.What are synthetic events in React?( Eventg qanday qilib parometr jo’natadi)
 // 17. What is  ‘key’ prop and what is the benefit of usingS it in arrays of elements
 // (Listlarda nimaga “key” ishlatiladi.

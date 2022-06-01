@@ -8,11 +8,13 @@ import { ReactComponent as vektor } from '../../../assets/icons/arrow-top-bottom
 
 const Container = styled.div`
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    flex-direction: column;
+    justify-content:space-between;
     width: 100%;
-    min-width: 300px;
+    min-width:250px;
     max-width: 380px;
+    background: #ffffff;
     min-height: 450px;
     border: 1px solid rgba(230, 233, 236, 1);
     border-radius: 3px;
