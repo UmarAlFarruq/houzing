@@ -1,3 +1,4 @@
+import { DetailsPage } from "../pages/Details"
 import { Generic } from "../pages/Generic"
 import { HomePage } from "../pages/Home"
 import {  PropertiesPage } from "../pages/Properties"
@@ -9,7 +10,8 @@ export const navbar = [
         Element: <HomePage />,
         search: '?',
         hidden: false,
-        private: false
+        private: false,
+        param:true
     },
     {
         id: 2,
@@ -18,7 +20,8 @@ export const navbar = [
         Element: <PropertiesPage />,
         search: '?',
         hidden: false,
-        private: false
+        private: false,
+        param:true
     },
     {
         id: 3,
@@ -27,7 +30,8 @@ export const navbar = [
         Element: <Generic />,
         search: '?',
         hidden: false,
-        private: false
+        private: false,
+        param:true
     },
     {
         id: 4,
@@ -36,7 +40,8 @@ export const navbar = [
         Element: <Generic />,
         search: '?',
         hidden: true,
-        private: false
+        private: false,
+        param:true
     },
     {
         id: 5,
@@ -45,6 +50,17 @@ export const navbar = [
         Element: <Generic />,
         search: '?',
         hidden: true,
-        private: false
+        private: false,
+        param:true
+    },
+    {
+        id: 6,
+        title: 'Details',
+        path: '/properties/:id',
+        Element: <DetailsPage />,
+        search: '?',
+        hidden: true,
+        private: false,
+        param:false
     },
 ]

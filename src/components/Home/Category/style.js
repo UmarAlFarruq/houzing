@@ -10,6 +10,7 @@ const Container = styled.div`
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
+    padding: 0 130px;
 `
 const Wrapper = styled.div`
     gap: 20px;
@@ -52,10 +53,10 @@ Icon.Left = styled(left)`
     align-items: center;
     position: absolute;
     top: 40%; 
-    left: 32px;
+    left: -99px;
     width: 45px;
     height: 45px;
-    background: white;
+    background: black;
     color: white;
     border-radius: 50%;
     cursor: pointer;
@@ -70,7 +71,7 @@ Icon.Left = styled(left)`
         opacity: 0.97;
     }
     & path{
-        fill: black;
+        fill: white;
     }
 `;
 
@@ -80,10 +81,10 @@ Icon.Right = styled(right)`
     align-items: center;
     position: absolute;
     top: 40%; 
-    right: 32px;
+    right: -99px;
     width: 45px;
     height: 45px;
-    background: white;
+    background: black;
     color: white;
     border-radius: 50%;
     cursor: pointer;
@@ -98,7 +99,7 @@ Icon.Right = styled(right)`
         opacity: 0.97;
     }
     & path{
-        fill: black;
+        fill: white;
     }
 `
 

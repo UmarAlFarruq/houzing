@@ -10,6 +10,7 @@ const Container = styled.div`
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
+    padding: 0 130px;
 `
 const Wrapper = styled.div`
     gap: 20px;
@@ -52,7 +53,7 @@ Icon.Left = styled(left)`
     align-items: center;
     position: absolute;
     top: 40%; 
-    left: 32px;
+    left: -99px;
     width: 45px;
     height: 45px;
     background: black;
@@ -79,7 +80,7 @@ Icon.Right = styled(right)`
     align-items: center;
     position: absolute;
     top: 40%; 
-    right: 32px;
+    right: -99px;
     width: 45px;
     height: 45px;
     background: black;

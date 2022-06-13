@@ -31,3 +31,5 @@ export const Button = ({
         </Container>
     );
 }
+
+export default Button;

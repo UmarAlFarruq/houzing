@@ -1,10 +1,11 @@
 
 import { Container } from "./style";
 
-export  const Generic= () => {
+  const Sample= () => {
     return ( 
         <Container>
             Sample
         </Container>
      );
 }
+export default Sample;

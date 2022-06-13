@@ -1,7 +1,7 @@
 
 import { Container, Wrapper, Icon } from "./style";
 
-export const Input = ({
+ const Input = ({
     children,
     onClick,
     type,
@@ -18,7 +18,15 @@ export const Input = ({
     value
 }) => {
     return (
-        <Wrapper>
+        <Wrapper
+            width={width}
+            height={height}
+            type={type}
+            mr={mr}
+            mt={mt}
+            mb={mb}
+            ml={ml}
+        >
             <Icon>{children}</Icon>
             <Container
                 onClick={onClick}
@@ -27,15 +35,10 @@ export const Input = ({
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
-                width={width}
-                height={height}
-                type={type}
-                mr={mr}
-                mt={mt}
-                mb={mb}
-                ml={ml}
             >
             </Container>
         </Wrapper>
     );
 }
+
+export default Input;

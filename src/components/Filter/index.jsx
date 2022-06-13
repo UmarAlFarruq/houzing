@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { Container, Icon, Advanced, Section } from "./style";
-import { Button } from "../Generic/Button";
-import { Input } from "../Generic/Input";
+import { Button,Input } from "../Generic";
 import { Popover, Select } from "antd";
 import UseReplace from "../../hooks/useReplace";
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
+import useSearch from '../../hooks/useSearch';
 
 const { Option } = Select;
 const { REACT_APP_BASE_URL: url } = process.env;
 
 export const Filter = () => {
-    const [select, setSelect] = useState([])
+    const quary  = useSearch();
+    const [title, setTitle] = useState( quary.get('category_id'))
     const navigate = useNavigate();
 
     const onChange = ({ target }) => {
@@ -19,21 +20,23 @@ export const Filter = () => {
         navigate(`${UseReplace(name, value)}`)
     }
     const onSelect = (e) => {
-        navigate(`${UseReplace('category_id', e)}`)
+        setTitle(e)
+        navigate(`${UseReplace('category_id', e)}`);
     }
-    useQuery(
+    const { data } = useQuery(
         ['getCategorydata'],
         () => { return fetch(`${url}/v1/categories/list`).then(res => res.json()) },
         {
-            onSuccess: (res) => setSelect(() => res.data || []),
+            onSuccess: (res) => { return res; },
         }
     )
+
 
     const AdvancedSearch = (
         <Advanced>
             <Advanced.Title>Address</Advanced.Title>
             <Section>
-                <Input onChange={onChange} name='country' placeholder="Country" />
+                <Input  onChange={onChange} name='country' placeholder="Country" />
                 <Input onChange={onChange} name='region' placeholder="Region" />
                 <Input onChange={onChange} name='city' placeholder="City" />
                 <Input onChange={onChange} name='zip_code' placeholder="Zip code" />
@@ -53,10 +56,11 @@ export const Filter = () => {
                     onChange={onSelect}
                     size="large"
                     placeholder="Category"
+                    // value={2}
+                    value={Number(title)}
                     style={{ minWidth: 200 }}
-                    defaultValue={2}
                 >
-                    {select.map(value => {
+                    {data?.data?.map(value => {
                         return <Option key={value.id} value={value.id}>{value.name}</Option>
                     })}
                 </Select>

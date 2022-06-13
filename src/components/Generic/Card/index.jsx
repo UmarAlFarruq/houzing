@@ -3,13 +3,15 @@ import { Container, User, InfoWrapper, PriceWrapper, Price, Image, Info, IconWra
 import noimg from '../../../assets/images/noimage.png'
 import user from '../../../assets/images/user.jpg'
 
-export const Card = ({ info, mr, mt, }) => {
+export const Card = ({ info, mr, mt,onClick  }) => {
+
+
     return (
-        <Container mr={mr} mt={mt} className="nocopy" >
+        <Container onClick={onClick}  mr={mr} mt={mt} className="nocopy" >
             <Image src={info?.attachments[0]?.imgPath || noimg} alt='house img' />
             <InfoWrapper>
                 <User>
-                    <User.Img src={info?.user || user} />
+                    <User.Img src={info?.attachments[0]?.imgPath || user} />
                 </User>
                 <Info.Title>
                     {info?.address || 'New Apartment Nice Wiew'} <br />

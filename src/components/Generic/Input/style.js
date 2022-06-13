@@ -29,6 +29,7 @@ const Container = styled.input`
     outline: none;
     background: none;
     width: 100%;
+    
 `
 
 const Wrapper = styled.div`
@@ -45,8 +46,8 @@ const Wrapper = styled.div`
     width: 100%;
     margin-top: ${({ mt }) => `${mt}px`};
     margin-right: ${({ mr }) => `${mr}px`};
-    margin-bottom: ${({ ml }) => `${ml}px`};
-    margin-left: ${({ mt }) => `${mt}px`};
+    margin-bottom: ${({ mb }) => `${mb}px`};
+    margin-left: ${({ ml }) => `${ml}px`};
 `
 const Icon = styled.div`
    margin-left: 10px;

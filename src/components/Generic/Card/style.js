@@ -127,7 +127,7 @@ const User = styled.div`
     display: flex;
     justify-content: center;
     position: absolute;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     width: 42px;
     height: 42px;
     border-radius: 50%;
