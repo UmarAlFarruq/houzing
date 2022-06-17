@@ -1,7 +1,10 @@
+import AddHouse from "../components/Profile/AddHouse"
 import { DetailsPage } from "../pages/Details"
 import { Generic } from "../pages/Generic"
 import { HomePage } from "../pages/Home"
-import {  PropertiesPage } from "../pages/Properties"
+import { ProfilePage } from "../pages/Profile"
+import { PropertiesPage } from "../pages/Properties"
+import SigininPage from "../pages/Siginin"
 export const navbar = [
     {
         id: 1,
@@ -11,7 +14,7 @@ export const navbar = [
         search: '?',
         hidden: false,
         private: false,
-        param:true
+        param: true
     },
     {
         id: 2,
@@ -21,7 +24,7 @@ export const navbar = [
         search: '?',
         hidden: false,
         private: false,
-        param:true
+        param: true
     },
     {
         id: 3,
@@ -31,17 +34,17 @@ export const navbar = [
         search: '?',
         hidden: false,
         private: false,
-        param:true
+        param: true
     },
     {
         id: 4,
         title: 'sign In',
         path: '/signin',
-        Element: <Generic />,
+        Element: <SigininPage />,
         search: '?',
         hidden: true,
         private: false,
-        param:true
+        param: true
     },
     {
         id: 5,
@@ -51,7 +54,7 @@ export const navbar = [
         search: '?',
         hidden: true,
         private: false,
-        param:true
+        param: true
     },
     {
         id: 6,
@@ -61,6 +64,26 @@ export const navbar = [
         search: '?',
         hidden: true,
         private: false,
-        param:false
+        param: false
+    },
+    {
+        id: 7,
+        title: 'Profile',
+        path: '/profile/properties',
+        Element: <ProfilePage />,
+        search: '?',
+        hidden: true,
+        private: false,
+        param: false
+    },
+    {
+        id: 7,
+        title: 'Profile',
+        path: '/profile/add',
+        Element: <AddHouse />,
+        search: '?',
+        hidden: true,
+        private: false,
+        param: false
     },
 ]

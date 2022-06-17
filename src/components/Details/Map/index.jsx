@@ -67,7 +67,7 @@ const Map = ({ data }) => {
         <Title.Title size={18} >Property Details </Title.Title>
         <WrapprDescription>
           <WrapperDetails  >
-            <Title.Title>Property ID: <Title.Des>{data?.id}</Title.Des>  </Title.Title>
+            <Title.Title  onClick={()=>setMap(map)} >Property ID: <Title.Des>{data?.id}</Title.Des>  </Title.Title>
             <Title.Title>Price: <Title.Des>${data?.price}</Title.Des>  </Title.Title>
             <Title.Title>Property Size: <Title.Des>{data?.size}</Title.Des>  </Title.Title>
             <Title.Title>Year Bulit: <Title.Des>{data?.houseDetails?.yearBuilt}</Title.Des> </Title.Title>

@@ -42,8 +42,8 @@ const Wrapper = styled.div`
     border-radius: 2px;
     height: ${({ height }) => height || '44px'};
     min-width: ${({ width }) => width || '200px'};
-    width: ${({ width }) => width || '400px'};
     width: 100%;
+    width: ${({ width }) => width || '100%'};
     margin-top: ${({ mt }) => `${mt}px`};
     margin-right: ${({ mr }) => `${mr}px`};
     margin-bottom: ${({ mb }) => `${mb}px`};

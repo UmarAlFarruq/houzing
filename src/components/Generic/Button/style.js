@@ -30,6 +30,7 @@ const Container = styled.button`
     font-weight: 400;
     line-height: 20px;
     background: none;
+    padding:${({ pd }) => `${pd}px`} ;
 
     height: ${({ height }) => height || '44px'};
     min-width: ${({ width }) => width || '100%'};

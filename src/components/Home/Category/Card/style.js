@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import img from '../../../../assets/images/category.png'
+// import img from '../../../../assets/images/category.png'
 
 
 

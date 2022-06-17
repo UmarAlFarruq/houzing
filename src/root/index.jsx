@@ -6,6 +6,7 @@ import { navbar } from '../utils/navbar.js';
 export const Root = () => {
     return (
         <Routes>
+            <Route path='/profile' element={<Navigate to={'/profile/properties'} />} />
             <Route path="/" element={<Navbar />} >
                 {navbar.map(({ path, id, Element, param }) => {
                     return !param && <Route key={id} path={path} element={Element} />
@@ -22,6 +23,6 @@ export const Root = () => {
             <Route path='/' element={<Navigate to={'/home'} />} />
             <Route path='*' element={<div>Not Found</div>} />
         </Routes>
-        
+
     );
 }
